@@ -1,0 +1,156 @@
+/*styling global & body part*/
+body{
+  font: 0.8em/1.5 Arial, Helvetica,sans-serif;
+  background-color:#f4f4f4;
+  margin: auto;
+  margin-bottom: 60px;
+}
+
+header h1{
+  color: #ffffff;
+  text-align: center;
+  background: #35424a;
+  border-bottom: 2px #e8491d;
+  padding:10px 0px;
+  margin: 0px auto;
+  font-size: 3em;
+}
+
+.navbar-nav{
+  background-color:#35424a;
+  text-align: center;
+  border-bottom: 2px #e8491d solid;
+  overflow: hidden;
+}
+
+.navbar-nav a{
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.navbar-nav li{
+  display: inline;
+  list-style: none;
+  padding-right: 20px;
+}
+
+.current a{
+  color: #e8491d;
+  font-weight: bold;
+}
+
+.navbar-nav a:hover{
+  font-weight: bold;
+  font-style: italic;
+}
+
+.side-nav{
+  height:100%;
+  width:0;
+  position:fixed;
+  z-index:1;
+  top:0;
+  right:0;
+  background-color:#35424a;
+  opacity:0.9;
+  overflow-x:hidden;
+  padding-top:60px;
+  margin-right: 2px #e8491d solid;
+  transition:0.5s;
+}
+
+.side-nav a{
+  padding:5px 5px 5px 25px;
+  text-decoration:none;
+  text-transform: uppercase;
+  font-size:1.2em;
+  color:#ccc;
+  display:block;
+  transition:0.3s;
+}
+
+.side-nav a:active, .side-nav a:hover{
+  color: #e8491d;
+  font-style: italic;
+}
+
+.side-nav .btn-close{
+  position:absolute;
+  margin: 0;
+  top:0;
+  right: 5px;
+  font-size:36px;
+}
+
+/*styling footer*/
+footer{
+    position: fixed;
+    display: grid;
+    align-items:center;
+    justify-content: center;
+    background: #35424a;
+    color: #ffffff;
+    min-height: 50px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+footer p{
+  margin: 0px auto;
+}
+
+/*common styling stuff*/
+#errorPage{
+  color: #e8491d;
+  margin: auto;
+}
+#emph{
+  color: #e8491d;
+  font-weight: bold;
+}
+
+.open-slide{
+  display: none;
+}
+
+#reviews-container{
+  display:grid;
+  grid-template-columns:1fr;
+  grid-auto-rows:minmax(100px, auto);
+  grid-gap:0.2em;
+  justify-items:stretch;
+  align-items:stretch;
+}
+
+#reviews-container > div{
+  background:#eee;
+  padding:0.5em;
+  text-align-last: center;
+  padding: 5px;
+}
+
+#reviews-container > div:nth-child(odd){
+  background:#ddd;
+}
+
+@media (max-width: 756px) {
+  header h1{
+    text-align: left;
+    font-size: 1.9em;
+    padding-right: 15px;
+    padding-left: 10px;
+  }
+
+  header nav ul{
+    display: none;
+  }
+
+  .open-slide{
+    display: inline;
+    float: right;
+    position: absolute;
+    top: 1.5em;
+    right: 5px;
+  }
+}
