@@ -11,9 +11,13 @@ header h1{
   text-align: center;
   background: #35424a;
   border-bottom: 2px #e8491d;
-  padding:10px 0px;
+  padding:15px 0px;
   margin: 0px auto;
   font-size: 3em;
+}
+header a{
+  text-decoration: none;
+  color: white;
 }
 
 .navbar-nav{
@@ -130,9 +134,164 @@ footer p{
   padding: 5px;
 }
 
+.rating{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  text-align-last: left;
+}
+
 #reviews-container > div:nth-child(odd){
   background:#ddd;
 }
+
+#ReviewBtnDiv input{
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  background: url('../images/write_review_icon.png') no-repeat 10px 3px;
+  background-color: #afafaf;
+  padding: 10px 20px 10px 45px;
+  font-weight: bold;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 25px;
+  font-style: italic;
+
+}
+#searchBtn{
+  height: 35px;
+  max-width: 50px;
+  background: url('../images/search1.png') no-repeat 7px 2px;
+  background-color: #afafaf;
+  border-style: outset;
+  border-top: 2px;
+  border: none;
+  margin-right: 4px;
+}
+
+#searchBox{
+  box-shadow:none;
+  padding: none;
+  font-size: 1.2em;
+  margin-left: 4px;
+}
+#ReviewBtnDiv input:hover, #searchBtn:hover{
+  background-color: #a1a1a1;
+  transition: 0.2s;
+}
+#ReviewBtnDiv input:focus, #searchBtn:focus, #searchBox:focus{
+  outline: none;
+}
+#ReviewBtnDiv input:active, #searchBtn:active{
+  box-shadow: 1px 1px 3px #888888;
+}
+
+#ReviewBtnDiv a{
+  text-decoration: none;
+  display: flex;
+  grid-template-columns: 1fr 4fr;
+}
+
+.searchDiv{
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+}
+
+#recentReviews{
+  display: grid;
+  grid-row-gap: 1em;
+}
+#recentReviews h3{
+  margin: 0;
+  padding: 0;
+  margin-bottom: -5px;
+}
+
+.profile{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background: white;
+}
+.overview{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.overview > h4, .rating > h4{
+  margin: 0px;
+  padding: 0px;
+  text-align-last: left;
+}
+
+#other_comments{
+  grid-column:1/3;
+  grid-row:2;
+}
+
+#moreBtn{
+  width: auto;
+  height: 25px;
+  background-color: black;
+  color: #fff;
+  margin: 0px;
+  padding: 5px;
+  border:  0px;
+}
+
+.inner_heading{
+  font-weight: bold;
+  margin: 10px 0px auto;
+  text-align: center;
+  text-decoration: underline;
+  color: e8491d;
+}
+.reviewform{
+  display: grid;
+  width: 100%;
+  margin: 10px auto;
+  padding: 0px;
+  grid-row-gap: 0.5em;
+}
+
+.reviewform div input{
+  width: 98%;
+  padding: 3px 0px;
+  margin: 0px;
+}
+#comments-area{
+  width: 98%;
+}
+.rating{
+  display: grid;
+  width: 100%;
+}
+.sub_rating{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.stars{
+    margin-left: 0px;
+    margin-top: 4px;
+ }
+.checked {
+   color: orange;
+}
+#submitBtn{
+   text-align: center;
+   height: 30px;
+   font-weight: bold;
+   border-radius: 5px;
+   background-color: #35424a;
+   color: white;
+ }
+
+ #ReviewBtn:hover, #submitBtn:hover{
+   font-style: italic;
+ }
 
 @media (max-width: 756px) {
   header h1{
@@ -150,7 +309,7 @@ footer p{
     display: inline;
     float: right;
     position: absolute;
-    top: 1.5em;
+    top: 1.8em;
     right: 5px;
   }
 }
