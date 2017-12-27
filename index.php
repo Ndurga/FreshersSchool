@@ -1,6 +1,7 @@
 <?php
-  include("header.html");
-  include("dbConnection.php");
+  include_once("header.html");
+  include_once("common.php");
+  include_once("dbConnection.php");
 ?>
 
     <div id="ReviewBtnDiv">
@@ -11,11 +12,25 @@
       <input id="searchBtn" type="button" name="" value=""></input>
     </div>
 
-    <div id="resultsArea">
-      <h3 id='search_result'>Search Result</h3>
-    </div>
+    <?php
+        echo
+        "<div class='quicklinks'>
+          <h3 >Quick Links</h3>
+          <ul>
+            <li> <a href='$lang_file?page=$c_fresher_interview'>C Fresher Interview Questions</a></li>
+            <li> <a href='$lang_file?page=$c_in_1_hr'>Learn C In One Hour</a></li>
+            <li> <a href='$lang_file?page=$cpp_fresher_interview'>C++ Fresher Interview Questions</a></li>
+            <li> <a href='$lang_file?page=$cpp_in_1_hr'>Learn C++ In 1 Hour</a></li>
+          </ul>
+        </div>";
+    ?>
 
   <div id="reviews-container">
+    <div id="resultsArea">
+      <h3 >Search Result</h3>
+      <span id='search_result'></span>
+    </div>
+
     <div id="recentReviews">
       <h3>Recent Reviews</h3>
 
