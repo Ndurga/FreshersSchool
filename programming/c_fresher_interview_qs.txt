@@ -1,0 +1,2 @@
+<h1 class="heading"> C Fresher Interview Questions </h1>
+  <p id="errorPage">  Comming soon..... </p>
