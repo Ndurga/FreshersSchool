@@ -1,11 +1,11 @@
 <?php
   include_once("header.html");
   include_once("common.php");
-  include_once("dbConnection.php");
+  include_once("dbconnection.php");
 ?>
 
     <div id="ReviewBtnDiv">
-      <a href="writereview.php"><input type="button" name="" id="ReviewBtn" value="Write Review"></a>
+      <input type="button" name="" id="ReviewBtn" value="Write Review" onclick="writeReview()">
     </div>
     <div class="searchDiv">
       <input type="text" id="searchBox" name="" value="" placeholder="Ex: institute / faculty / subject name"  onkeyup="searchReviews(this.value)"></input>
@@ -15,6 +15,7 @@
     <?php
         echo
         "<div class='quicklinks'>
+          <div>
           <h3 >Quick Links</h3>
           <ul>
             <li> <a href='$lang_file?page=$c_fresher_interview'>C Fresher Interview Questions</a></li>
@@ -22,13 +23,12 @@
             <li> <a href='$lang_file?page=$cpp_fresher_interview'>C++ Fresher Interview Questions</a></li>
             <li> <a href='$lang_file?page=$cpp_in_1_hr'>Learn C++ In 1 Hour</a></li>
           </ul>
+          </div>
         </div>";
     ?>
 
   <div id="reviews-container">
     <div id="resultsArea">
-      <h3 >Search Result</h3>
-      <span id='search_result'></span>
     </div>
 
     <div id="recentReviews">
@@ -55,11 +55,11 @@
             echo "<section><div class='profile'>";
             echo    "<img id='image' src='images/profile1.png' alt='No Image Available'>";
             echo    "<div class='overview'>
-                       <h4>Institute : <span>$institute</span></h3>
-                       <h4>Faculty : <span>$faculty</span></h3>
-                       <h4>Subject : <span>$subject</span></h4>
+                       <h4>Institute : <span class='chgfnt'>$institute</span></h4>
+                       <h4>Faculty   : <span class='chgfnt'>$faculty</span></h4>
+                       <h4>Subject   : <span class='chgfnt'>$subject</span></h4>
                        <div class='rating'>
-                        <h4>Rating</h3>
+                        <h4>Rating</h4>
                         <div class='stars'>
                           <span class='fa fa-star checked'></span>
                           <span class='fa fa-star checked'></span>
@@ -69,9 +69,8 @@
                         </div>
                        </div>
                      </div>
-                   <p id='other_comments'>$other_comments
-                   <button type='button' name='' id='moreBtn'> Click For More... </button>
-                   </p>
+                   <p id='other_comments' display='text-align:left'> <span id='chgclr'>Comments :</span>$other_comments</p>
+                   <button type='button' id='moreBtn' style='display:none' onclick='getMoreData()'>More...</button>
                   </div>
                 </section>";
           }

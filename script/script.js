@@ -3,9 +3,11 @@ $(document).ready(function(){
   $('#resultsArea').hide();
 });
 
+function writeReview(){
+  window.location.href = "writereview.php";
+}
 
 function openSlideMenu(){
-  console.log('open slide');
   document.getElementById('side-menu').style.width = '60%';
 }
 
@@ -13,8 +15,9 @@ function closeSlideMenu(){
   document.getElementById('side-menu').style.width = '0';
 }
 
-function search(){
-  console.log('Search........');
+//use later
+function getMoreData(){
+    //console.log('get more....');
 }
 
 function searchReviews(searchStr){
@@ -31,16 +34,12 @@ function searchReviews(searchStr){
   }
   xmlHttp.onreadystatechange = function(){
     if(this.readyState==4 && this.status==200){
-        $('#resultsArea').show();
-
-        console.log(this.responseText);
-
-        //$('resultsArea').append(this.responseText);
-        var elemt = document.getElementById('resultsArea');
-        elemt.innerHTML =  this.responseText;
-
-        if("" == this.responseText.trim()){
-            $('#resultsArea').hide();
+        if("" != this.responseText.trim()){
+          var elemt = document.getElementById('resultsArea');
+          elemt.innerHTML =  "<h3>Search Result</h3>" + this.responseText;
+          $('#resultsArea').show();
+        }else {
+          $('#resultsArea').hide();
         }
     }
   }

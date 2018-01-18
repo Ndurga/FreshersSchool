@@ -1,6 +1,6 @@
 /*styling global & body part*/
 body{
-  font: 0.8em/1.5 Arial, Helvetica,sans-serif;
+  font: 0.9em/1.8 Verdana, Arial, Helvetica,sans-serif;
   background-color:#f4f4f4;
   margin: auto;
   margin-bottom: 60px;
@@ -107,8 +107,8 @@ footer p{
 /*common styling stuff*/
 #errorPage{
   font-size: 1.5em;
-  color: #e8491d;
   margin:0 auto;
+  color: #e8491d;
   text-align: center;
   margin-top: 10%;
 }
@@ -128,10 +128,12 @@ footer p{
   grid-gap:0.2em;
   justify-items:stretch;
   align-items:stretch;
+  margin: 0 auto;
+  width: 98%;
 }
 
 #reviews-container > div{
-  background:#eee;
+  /*background: #aeaeae;*/
   padding:0.5em;
   text-align-last: center;
   padding: 5px;
@@ -143,10 +145,6 @@ footer p{
   text-align-last: left;
 }
 
-#reviews-container > div:nth-child(odd){
-  background:#ddd;
-}
-
 #ReviewBtnDiv input{
   display: flex;
   justify-content: center;
@@ -156,14 +154,14 @@ footer p{
   margin-bottom: 5px;
   text-align: center;
   background: url('../images/write_review_icon.png') no-repeat 10px 3px;
-  background-color: #afafaf;
+  background-color: #888888;
   padding: 10px 20px 10px 45px;
   font-weight: bold;
   font-size: 1.2em;
-  border: none;
-  border-radius: 25px;
+  border: 1px solid;
+  border-radius: 20px;
   font-style: italic;
-
+  box-shadow: 2px 2px 5px #aeaeae;
 }
 #searchBtn{
   height: 35px;
@@ -171,8 +169,8 @@ footer p{
   background: url('../images/search1.png') no-repeat 7px 2px;
   background-color: #afafaf;
   border-style: outset;
-  border-top: 2px;
   border: none;
+  border-top: 4px;
   margin-right: 4px;
 }
 
@@ -180,7 +178,8 @@ footer p{
   box-shadow:none;
   padding: none;
   font-size: 1.2em;
-  margin-left: 4px;
+  margin-left: 6px;
+  margin-right: -1px;
 }
 #ReviewBtnDiv input:hover, #searchBtn:hover{
   background-color: #a1a1a1;
@@ -198,13 +197,12 @@ footer p{
   display: flex;
   grid-template-columns: 1fr 4fr;
 }
-
 .searchDiv{
   display: grid;
   grid-template-columns: 6fr 1fr;
 }
 
-#recentReviews{
+#recentReviews, #resultsArea{
   display: grid;
   grid-row-gap: 1em;
   padding: 1px;
@@ -213,12 +211,16 @@ footer p{
   margin: 0;
   padding: 0;
   margin-bottom: -5px;
+  color: #e8491d;
 }
 
 .profile{
     display: grid;
     grid-template-columns: 2fr 5fr;
-    background: #aeaeae;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 2px 3px 5px #888888;
+    background: #ffffff;
 }
 .overview{
   display: grid;
@@ -230,14 +232,23 @@ footer p{
   padding: 0px;
   padding: 0px;
   text-align-last: left;
+  color: #4169e1;
+}
+.chgfnt{
+  font-weight: normal;
+  color: #000000;
 }
 
 #other_comments{
   grid-column:1/3;
   grid-row:2;
   margin: 0.2em;
+  text-align-last: left;
 }
-
+#chgclr{
+  color: #4169e1;
+  font-weight: bold;
+}
 #moreBtn{
   width: auto;
   height: 25px;
@@ -308,6 +319,17 @@ footer p{
 .quicklinks{
   text-align: left;
   margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 98%;
+}
+.quicklinks div{
+  border: 2px solid;
+  box-shadow: 2px 2px 5px #888888;
+  text-align: center;
+}
+.quicklinks div ul{
+  padding: 0;
 }
 .quicklinks h3{
   padding: 0;

@@ -13,10 +13,10 @@
 	define("COLUMN_OVERALL_RATING","overall_rating");
 	define("COLUMN_COMMENTS","other_comments");
 
-	define("HOSTNAME","localhost");
-	define("DBUSER","root");
-	define("DBPWD","");
-	define("DBNAME","reviewsdb");
+	define("HOSTNAME","sql109.epizy.com");
+	define("DBUSER","epiz_21425149");
+	define("DBPWD","Ndurga1988");
+	define("DBNAME","epiz_21425149_reviewsdb");
   define("DB_TABLE", "reviews");
 
   class dbConnection{
@@ -66,7 +66,7 @@
 
       public function readReviews(){
         if($this->conn){
-          $sel = "SELECT * FROM  reviews";
+          $sel = "SELECT * FROM  reviews order by time DESC limit 10";
           $res  = mysqli_query($this->conn, $sel);
           $num  = 0;
 
@@ -120,8 +120,12 @@
   	}
 
 		function getSearchResults($searchTxt){
+			if (strlen($searchTxt) <= 2){
+				return;
+			}
+
 			if($this->conn){
-				$sel = "SELECT * FROM reviews where institute = '".$searchTxt."'"." OR subject = "."'".$searchTxt."'"." OR subject = "."'".$searchTxt."'";
+				$sel = "SELECT * FROM reviews where institute LIKE '%".$searchTxt."%'"." OR subject LIKE "."'%".$searchTxt."%'"." OR faculty LIKE "."'%".$searchTxt."%'";
 
 				$res  = mysqli_query($this->conn, $sel);
 				while($pro = mysqli_fetch_assoc($res)){
@@ -134,38 +138,32 @@
 					$overall_rating = $pro['overall_rating'];
 					$other_comments = $pro['other_comments'];
 
-					echo  "<div class='container'>";
-					echo  "<div class='recentReviews'>";
-					echo  "<section><div class='profile'>";
-					echo  "<img id='image' src='images/dp.jpg' alt='No Image Available'>";
-					echo  "<div class='overview'>
-									 <h4>Institute : <span>$institute</span></h3>
-									 <h4>Faculty : <span>$faculty</span></h3>
-									 <h4>Subject : <span>$subject</span></h4>
-									 <div class='rating'>
-										<h4>Rating</h3>
-										<div class='stars'>
-											<span class='fa fa-star checked'></span>
-											<span class='fa fa-star checked'></span>
-											<span class='fa fa-star checked'></span>
-											<span class='fa fa-star checked'></span>
-											<span class='fa fa-star checked'></span>
-										</div>
+					echo "<section><div class='profile'>";
+					echo    "<img id='image' src='images/profile1.png' alt='No Image Available'>";
+					echo    "<div class='overview'>
+										 <h4>Institute : <span class='chgfnt'>$institute</span></h4>
+										 <h4>Faculty   : <span class='chgfnt'>$faculty</span></h4>
+										 <h4>Subject   : <span class='chgfnt'>$subject</span></h4>
+										 <div class='rating'>
+											<h4>Rating</h4>
+											<div class='stars'>
+												<span class='fa fa-star checked'></span>
+												<span class='fa fa-star checked'></span>
+												<span class='fa fa-star checked'></span>
+												<span class='fa fa-star checked'></span>
+												<span class='fa fa-star checked'></span>
+											</div>
+										 </div>
 									 </div>
-								 </div>
-								 <div class='clear1'></div>
-								 <p>$other_comments</p>
-								 <button type='button' name='' id='moreBtn'> Click For More... </button>
-								 </div>
-								 </section>
-								 </div>
-								 </div>";
+								 <p id='other_comments' display='text-align:left'> <span id='chgclr'>Comments :</span>$other_comments</p>
+								 <button type='button' id='moreBtn' style='display:none' onclick='getMoreData()'>More...</button>
+								</div>
+							</section>";
 					}
 			}
 			else {
 				echo "Sorry connection error...";
 			}
 		}
-
 	 }
  ?>
