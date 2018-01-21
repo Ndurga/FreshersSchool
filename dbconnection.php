@@ -13,10 +13,16 @@
 	define("COLUMN_OVERALL_RATING","overall_rating");
 	define("COLUMN_COMMENTS","other_comments");
 
-	define("HOSTNAME","sql109.epizy.com");
-	define("DBUSER","epiz_21425149");
-	define("DBPWD","Ndurga1988");
-	define("DBNAME","epiz_21425149_reviewsdb");
+	// define("HOSTNAME","sql109.epizy.com");
+	// define("DBUSER","epiz_21425149");
+	// define("DBPWD","Ndurga1988");
+	// define("DBNAME","epiz_21425149_reviewsdb");
+  // define("DB_TABLE", "reviews");
+
+	define("HOSTNAME","localhost");
+	define("DBUSER","root");
+	define("DBPWD","");
+	define("DBNAME","reviewsdb");
   define("DB_TABLE", "reviews");
 
   class dbConnection{

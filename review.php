@@ -28,9 +28,9 @@
           $subject = $_REQUEST['subject'];
           $faculty = $_REQUEST['faculty'];
           $profile_pic = '';
-          $sub_dep_rating = 0;                        //$_REQUEST['sub_dep_rating'];
-          $on_time_rating = 0;                        //$_REQUEST['on_time_rating'];
-          $overall_rating = 0;                        //$_REQUEST['overall_rating'];
+          $sub_dep_rating = $_REQUEST['sub_depth'];
+          $on_time_rating = $_REQUEST['complete_on_time'];
+          $overall_rating = $_REQUEST['overall_rating'];
           $comments = $_REQUEST['comments'];
 
           $dbConn->insertReview($institute, $subject, $faculty, $profile_pic, $sub_dep_rating, $on_time_rating, $overall_rating, $comments);
