@@ -53,7 +53,7 @@
             $other_comments = $dbConn->getOtherComments($record);
 
             echo "<section><div class='profile'>";
-            echo    "<img id='image' src='images/profile1.png' alt='No Image Available'>";
+            echo    "<img id='image' src='images/profile.png' alt='No Image Available'>";
             echo    "<div class='overview'>
                        <h4>Institute : <span class='chgfnt'>$institute</span></h4>
                        <h4>Faculty  <span>  </span> : <span class='chgfnt'>$faculty</span></h4>

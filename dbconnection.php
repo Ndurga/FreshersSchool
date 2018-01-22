@@ -145,7 +145,7 @@
 					$other_comments = $pro['other_comments'];
 
 					echo "<section><div class='profile'>";
-					echo    "<img id='image' src='images/profile1.png' alt='No Image Available'>";
+					echo    "<img id='image' src='images/profile.png' alt='No Image Available'>";
 					echo    "<div class='overview'>
 										 <h4>Institute : <span class='chgfnt'>$institute</span></h4>
 										 <h4>Faculty   : <span class='chgfnt'>$faculty</span></h4>
