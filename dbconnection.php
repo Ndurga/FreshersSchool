@@ -13,11 +13,19 @@
 	define("COLUMN_OVERALL_RATING","overall_rating");
 	define("COLUMN_COMMENTS","other_comments");
 
+//For infinity free account
 	// define("HOSTNAME","sql109.epizy.com");
 	// define("DBUSER","epiz_21425149");
-	// define("DBPWD","Ndurga1988");
+	// define("DBPWD","*********");
 	// define("DBNAME","epiz_21425149_reviewsdb");
   // define("DB_TABLE", "reviews");
+
+	// define("HOSTNAME","mysql.hostinger.in");
+	// define("DBUSER","u719252236_durga");
+	// define("DBPWD","*********");
+	// define("DBNAME","u719252236_db1");
+  // define("DB_TABLE", "reviews");
+
 
 	define("HOSTNAME","localhost");
 	define("DBUSER","root");
@@ -149,19 +157,37 @@
 					echo    "<div class='overview'>
 										 <h4>Institute : <span class='chgfnt'>$institute</span></h4>
 										 <h4>Faculty   : <span class='chgfnt'>$faculty</span></h4>
-										 <h4>Subject   : <span class='chgfnt'>$subject</span></h4>
-										 <div class='rating'>
-											<h4>Rating</h4>
-											<div class='stars'>
-												<span class='fa fa-star checked'></span>
-												<span class='fa fa-star checked'></span>
-												<span class='fa fa-star checked'></span>
-												<span class='fa fa-star checked'></span>
-												<span class='fa fa-star checked'></span>
-											</div>
-										 </div>
-									 </div>
-								 <p id='other_comments' display='text-align:left'> <span id='chgclr'>Comments :</span>$other_comments</p>
+										 <h4>Subject   : <span class='chgfnt'>$subject</span></h4>";
+					echo "<h4>Subject depth</h4><div class='star_div'>";
+                 for ($i=1; $i <= 5; $i++) {
+                   if ($i > $sub_depth) {
+                     echo "<img src='images\gray_star_16.png' alt=''> </a>";
+                   }else {
+                     echo "<img src='images\gold_star_16.png' alt='*'> </a>";
+                   }
+                 }
+          echo "</div>";
+
+          echo "<h4>Complet on time </h4><div class='star_div'>";
+                   for ($i=1; $i <= 5; $i++) {
+                     if ($i > $sub_complete_time) {
+                       echo "<img src='images\gray_star_16.png' alt=''> </a>";
+                     }else {
+                       echo "<img src='images\gold_star_16.png' alt='*'> </a>";
+                     }
+                   }
+          echo "</div>";
+
+          echo "<h4>Overall Rating</h4><div class='star_div'>";
+                   for ($i=1; $i <= 5; $i++) {
+                     if ($i > $overall_rating) {
+                       echo "<img src='images\gray_star_16.png' alt=''> </a>";
+                     }else {
+                       echo "<img src='images\gold_star_16.png' alt='*'> </a>";
+                     }
+                   }
+          echo "</div></div>";
+					echo "<p id='other_comments' display='text-align:left'> <span id='chgclr'>Comments :</span>$other_comments</p>
 								 <button type='button' id='moreBtn' style='display:none' onclick='getMoreData()'>More...</button>
 								</div>
 							</section>";
